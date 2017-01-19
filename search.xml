@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[React入门]]></title>
+      <url>http://whyguoguo.com/2017/01/07/React%E5%85%A5%E9%97%A8/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[那就这样吧]]></title>
+      <url>http://whyguoguo.com/2017/01/02/%E9%82%A3%E5%B0%B1%E8%BF%99%E6%A0%B7%E5%90%A7/</url>
+      <content type="html"><![CDATA[<p>不喜欢想很多，因为我是个超级怕动脑的孩子，说实话啦，就是懒。</p>
+<p>很久没写过文章，早已经丧失了写文章的能力，没事只会无病呻吟。</p>
+<p>突然非常佩服非常崇拜有梦想的人，看着别人说着自己的梦想，突然好羡慕，好像，我最近没有什么目标。</p>
+<p>我喜欢睡懒觉，我喜欢白天睡觉，晚上出来活动。</p>
+<p>我喜欢不停的吃，不是吃饭，是吃零食。</p>
+<p>我不喜欢按照定好的计划做事，所以，我都是想做什么就做什么。</p>
+<p>我喜欢做我自己喜欢做的事，所以老师布置的作业我都是copy同学的，总觉得那是种约束。</p>
+<p>兴致来了，我能不吃饭不睡觉去做我认为好玩的事，兴致走了，我就躺在床上睁着眼，放空自己。当然，我叫这种为间接性精神病。</p>
+<p>有时候，很想回忆以前的事，但是又默默告诉自己，想太多费脑，不想了。所以，很多事我都忘了。</p>
+<p>我不喜欢充足的准备去做一件事，临场发挥，没有逻辑，我也没有觉得闹出什么笑话吧。</p>
+<p>我不喜欢被打扰，当我真正想做一件事的时候，总感觉不自在。</p>
+<p>我总想，丢人就丢人吧，反正没人认识我，所以做了很多现在觉得很傻的事。</p>
+<p>我现在有一个愿望。</p>
+<p>我一直觉得，现在所做的任何事，都是有价值的，而它的意义总会在未来的某一天体现出来。</p>
+<p>所有，我希望，好好珍惜每一天，用心做好每一件事。</p>
+<p>其实，看到上面毫无逻辑的一段话，我也好想笑，对啊，我就是这么傻，你管得着么。</p>
+<p>室友都叫我宝宝，对啊，我喜欢撒撒娇，老妈说我那是不要脸。</p>
+<p>对啊，我现在还是个孩子呀，但是我也有成熟的一面，什么时候该疯该疯，做正事还是要有个样子。</p>
+<p>生活，每天都是那么美好，你，不要嘲笑。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[封装自己的jQuery插件]]></title>
+      <url>http://whyguoguo.com/2016/12/28/%E5%B0%81%E8%A3%85%E8%87%AA%E5%B7%B1%E7%9A%84jQuery%E6%8F%92%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<p>做WEB项目，jQuery应该是深受大部分技术人员的喜爱。jQuery提供了丰富的操作，以前做项目的时候经常自己找JQuery插件，非常想自己能够写出炫酷的jQuery插件。于是，看了好多技术博客，想想还是把自己总结一下,有错误和不足请指出。</p>
+<h3 id="jQuery扩展机制"><a href="#jQuery扩展机制" class="headerlink" title="jQuery扩展机制"></a>jQuery扩展机制</h3><p>所有的Jquery代理对象的实例，都是扩展自$.fn对象的，意味着只要我们继续扩展$.fn这个对象的功能，就相当于扩展了所有的Jquery代理对象的实例的功能。</p>
+<h3 id="插件扩展机制的实现原理"><a href="#插件扩展机制的实现原理" class="headerlink" title="插件扩展机制的实现原理"></a>插件扩展机制的实现原理</h3><p>所有jQuery核心函数返回的代理对象的构造器的原型就是$.fn，在$.fn扩展的函数，所有的jQuery代理对象都可以使用。说白了，jQuery插件扩展机制，就是在$.fn对象中添加自定义的功能。</p>
+<h3 id="jQuery插件代码实现"><a href="#jQuery插件代码实现" class="headerlink" title="jQuery插件代码实现"></a>jQuery插件代码实现</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(<span class="keyword">function</span>(root,factory,plug)&#123;</div><div class="line">	factory(root.jQuery,plug);</div><div class="line">&#125;)(window,<span class="keyword">function</span>($,plug)&#123;</div><div class="line">  $.fn[plug-name] = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">    console.log(plug-name);</div><div class="line">  &#125;</div><div class="line">&#125;,<span class="string">"plug-name"</span>);</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[npm模块管理器]]></title>
+      <url>http://whyguoguo.com/2016/12/28/npm%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86%E5%99%A8/</url>
+      <content type="html"><![CDATA[<h1 id="npm是什么"><a href="#npm是什么" class="headerlink" title="npm是什么"></a>npm是什么</h1><p>npm有两层含义。一层是Node的开放式模块登记和管理系统，网址为npmjs.org。另一层含义是Node默认的模块管理器，是一个命令行下的软件，用来安装和管理Node模块。<br>注：npm不需要单独安装，在安装Node的时候会连带一起安装npm。但是Node附带的npm可能不是最新版本，用一下命令，更新到最新版本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install npm@latest -g</div></pre></td></tr></table></figure>
+<p>通过输入 “npm -v” 来测试是否成功安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm -v</div></pre></td></tr></table></figure>
+<p>在学习Node的过程中，对npm命令的掌握必不可少。通过我自己的学习，整理了一些npm基础的命令。</p>
+<h2 id="npm-init"><a href="#npm-init" class="headerlink" title="npm init"></a>npm init</h2><p>npm init 命令初始化生成一个新的package.json文件。它会向用户提问一系列问题，如果你觉得不用修改默认配置，一路回车即可。</p>
+<h2 id="npm-set"><a href="#npm-set" class="headerlink" title="npm set"></a>npm set</h2><p>npm set 命令用来设置环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="built_in">set</span> init-author-name <span class="string">'name'</span></div><div class="line">$ npm <span class="built_in">set</span> init-author-email <span class="string">'email'</span></div><div class="line">$ npm <span class="built_in">set</span> init-author-url <span class="string">'http://XXX.com'</span></div><div class="line">$ npm <span class="built_in">set</span> init-license <span class="string">'MIT'</span></div></pre></td></tr></table></figure>
+<p>上面命令为npm  init设置了默认值，以后执行npm init的时候，packa.json的作者姓名，邮件，主页，许可证字段会自动写入预设的值。这些信息会存放在用户主目录的.npmrc文件，使得用户不用每个项目都输入。如果项目需要，可以针对该项目运行npm config。</p>
+<h2 id="npm-config"><a href="#npm-config" class="headerlink" title="npm config"></a>npm config</h2><p>npm config 管理npm的配置路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">npm config <span class="built_in">set</span>  [-g|--global]</div><div class="line">npm config get</div><div class="line">npm config delete</div><div class="line">npm config list</div><div class="line">npm config edit</div><div class="line">npm get</div><div class="line">npm <span class="built_in">set</span></div></pre></td></tr></table></figure>
+<h2 id="npm-info"><a href="#npm-info" class="headerlink" title="npm info"></a>npm info</h2><p>npm info 命令可以查看每个模块的具体信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm info</div></pre></td></tr></table></figure>
+<h2 id="npm-search"><a href="#npm-search" class="headerlink" title="npm search"></a>npm search</h2><p>npm search 命令用于搜索npm仓库，后面可以跟字符串，也可以跟正则表达式。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm search &lt;搜索词&gt;</div></pre></td></tr></table></figure>
+<h2 id="npm-list"><a href="#npm-list" class="headerlink" title="npm list"></a>npm list</h2><p>npm list 命令以树形结构列出当前项目安装的所有模块，以及它们依赖的模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm list</div></pre></td></tr></table></figure>
+<p>加上global参数，会列出全局安装的模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm list global</div></pre></td></tr></table></figure>
+<p>列出单个模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm list express</div></pre></td></tr></table></figure>
+<h2 id="npm-install"><a href="#npm-install" class="headerlink" title="npm install"></a>npm install</h2><p>npm install 命令安装常用的模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install express</div></pre></td></tr></table></figure>
+<p>安装好之后，express 包就放在了工程目录下的 node_modules 目录中。<br>使用时通过 require() 来引入。</p>
+<p>全局安装（global）,使用 -g 或 –global</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install express -g</div></pre></td></tr></table></figure>
+<p>将安装包放在 /usr/local 下或者你 node 的安装目录。<br>使用时直接在命令行使用。</p>
+<h2 id="npm-update"><a href="#npm-update" class="headerlink" title="npm update"></a>npm update</h2><p>npm update 命令可以更新本地安装的模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">升级当前项目的指定模块</div><div class="line">$ npm update &lt;package name&gt;</div><div class="line">升级全局安装的模块</div><div class="line">$ npm update -global &lt;package name&gt;</div></pre></td></tr></table></figure>
+<h2 id="npm-uninstall"><a href="#npm-uninstall" class="headerlink" title="npm uninstall"></a>npm uninstall</h2><p>npm uninstall 命令卸载模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">卸载当前项目的指定模块</div><div class="line">$ npm uninstall &lt;package name&gt;</div><div class="line">卸载全局安装的模块</div><div class="line">$ npm uninstall &lt;package name&gt; -global</div></pre></td></tr></table></figure>
+<h2 id="npm-start"><a href="#npm-start" class="headerlink" title="npm start"></a>npm start</h2><p>npm start 命令启动模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm start express</div></pre></td></tr></table></figure>
+<h2 id="npm-stop"><a href="#npm-stop" class="headerlink" title="npm stop"></a>npm stop</h2><p>npm stop 命令停止模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm stop express</div></pre></td></tr></table></figure>
+<h2 id="npm-restart"><a href="#npm-restart" class="headerlink" title="npm restart"></a>npm restart</h2><p>npm restart 命令重新启动模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm restart express</div></pre></td></tr></table></figure>
+<h2 id="npm-run"><a href="#npm-run" class="headerlink" title="npm run"></a>npm run</h2><p>npm run 命令执行脚本</p>
+<h2 id="npm-test"><a href="#npm-test" class="headerlink" title="npm test"></a>npm test</h2><p>npm test 命令测试模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="built_in">test</span> express</div></pre></td></tr></table></figure>
+<h2 id="npm-cache"><a href="#npm-cache" class="headerlink" title="npm cache"></a>npm cache</h2><p>npm cache 命令管理模块的缓存</p>
+<p>上面我简单的列举了npm的常用命令，如有需要可以上npm官网深入学习npm.</p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
