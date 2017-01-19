@@ -1532,7 +1532,7 @@ hr.byline-accent {
 ******************************************************* */
 #statement {
 	background-color: #fff;
-	padding: 60px 0 20px;
+	padding: 20px 0;
 }
 
 #statement p {
@@ -3086,7 +3086,7 @@ button.send{
 * Global footer, (all pages)
 ******************************************************* */
 footer {
-	padding:5% 0 0;
+	padding:2% 0 0;
 	background:#151515;
 	z-index: 9;
 	position: relative;
